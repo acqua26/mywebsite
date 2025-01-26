@@ -1,4 +1,5 @@
 import React from 'react';
+import RoboticsCalculatorImage from './RoboticsCalculator.png';
 import { ArrowLeft, Calculator, Notebook as Robot, Code, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -7,16 +8,16 @@ export default function RoboticsCalculator() {
     "Forward and Inverse Kinematics Calculations",
     "Transformation Matrix Operations",
     "Jacobian Matrix Computation",
-    "Workspace Analysis Tools",
-    "Dynamic Parameter Calculations",
-    "Joint Space Trajectory Planning"
+    "Callback Function Implementation",
+    "Robotics Calculator Interface",
+    "User Input via Table Manipulation",
+    "Multiple Value Assessment"
   ];
 
   const technicalDetails = [
     "Built with MATLAB R2023a",
     "Object-Oriented Programming Architecture",
     "Custom GUI using MATLAB App Designer",
-    "Real-time 3D Visualization",
     "Optimized Matrix Operations",
     "Extensible Plugin System"
   ];
@@ -35,8 +36,7 @@ export default function RoboticsCalculator() {
             Robotics Calculator
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl">
-            A comprehensive MATLAB-based application for robotic arm calculations,
-            designed to simplify complex mathematical operations in robotics engineering.
+          The Robotics Calculator is an advanced MATLAB application for performing kinematic analysis, transformation calculations, and trajectory planning in robotics engineering.
           </p>
         </div>
       </div>
@@ -81,17 +81,14 @@ export default function RoboticsCalculator() {
           <div className="space-y-8">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
+                src={RoboticsCalculatorImage}
                 alt="Robotics Calculator Interface"
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-4">Project Overview</h3>
                 <p className="text-gray-600">
-                  The Robotics Calculator is a sophisticated MATLAB application designed to streamline
-                  complex calculations commonly encountered in robotics engineering. It provides an
-                  intuitive interface for performing kinematic analysis, transformation calculations,
-                  and trajectory planning for robotic systems.
+                This tool simplifies complex robotics computations with an intuitive interface. It utilizes powerful functions from Peter Corke's Toolbox and the Robotics System Toolbox. Built with MATLAB R2023a, it streamlines engineering workflows for robotics professionals.
                 </p>
               </div>
             </div>
@@ -99,16 +96,15 @@ export default function RoboticsCalculator() {
             <div className="bg-gray-50 rounded-xl p-6">
               <h3 className="text-xl font-bold mb-4">Development Process</h3>
               <p className="text-gray-600 mb-4">
-                The development followed an iterative approach, starting with core mathematical
-                functions and gradually building up to a full-featured GUI application. Key
-                milestones included:
+              The development followed an iterative approach. The core mathematical engine was developed first, followed by the design and implementation of the GUI. The 3D visualization system was integrated to enhance user experience, and extensive testing was carried out using real robot models. Callback functions were used to execute the necessary functions, and the app was optimized for ease of use. The final product was tested with students, who praised the app for being intuitive and user-friendly, with one user commenting, “the app is easy to use.”
+
+              Team Contribution: I shared the responsibility of programming the entire app and backend code alongside Rahul Thorat, a brilliant coder from ASU. Together, they successfully programmed the app in less than a week, adding additional functions to improve its usability.
+
+              Find MATLAB codes and documentation here.
               </p>
               <ol className="list-decimal list-inside space-y-2 text-gray-600">
                 <li>Core mathematical engine development</li>
                 <li>GUI design and implementation</li>
-                <li>3D visualization system integration</li>
-                <li>Optimization and performance tuning</li>
-                <li>Extensive testing with real robot models</li>
               </ol>
             </div>
           </div>

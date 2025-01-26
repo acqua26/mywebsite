@@ -1,4 +1,7 @@
 import ashishImage from './ashish.jpg';
+import RoboticsCalculatorImage from './RoboticsCalculator.png';
+import RoboticArmImage from './RoboticArm.png';
+import MachineVisionImage from './MachineVision.png';
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, ExternalLink, User, Code, Briefcase, Cpu, Notebook as Robot, BrainCircuit as Circuit, Cog, ChevronRight, ArrowRight } from 'lucide-react';
@@ -31,23 +34,23 @@ function HomePage() {
     {
       title: "Robotics Calculator",
       description: "Simplified Matlab App for solving pose and transformation calculation",
-      tags: ["MATLAB", "MATLAB GUI", "Iacobians", "Inverse Kinematics"],
+      tags: ["MATLAB", "MATLAB GUI", "Jacobians", "Inverse Kinematics"],
       link: "/projects/robotics-calculator",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
+      image: RoboticsCalculatorImage
     },
     {
       title: "Robotic Arm Control Interface",
       description: "Created a real-time control system for a 6-DOF robotic arm with inverse kinematics",
       tags: ["C++", "ROS", "Control Systems", "Qt"],
       link: "/projects/robotic-arm-control",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80"
+      image: RoboticArmImage
     },
     {
       title: "Machine Vision System",
       description: "Implemented an AI-powered vision system for object detection and pose estimation",
       tags: ["Python", "OpenCV", "Deep Learning", "PyTorch"],
       link: "/projects/machine-vision",
-      image: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&w=800&q=80"
+      image: MachineVisionImage
     }
   ];
 
