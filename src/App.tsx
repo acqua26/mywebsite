@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
 import ashishImage from './ashish.jpg';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, ExternalLink, User, Code, Briefcase, Cpu, Notebook as Robot, BrainCircuit as Circuit, Cog, ChevronRight, ArrowRight } from 'lucide-react';
+import RoboticsCalculator from './RoboticsCalculator';
+import RoboticArmControl from './RoboticArmControl';
+import MachineVision from './MachineVision';
 
-function App() {
+function HomePage() {
   const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -25,24 +29,24 @@ function App() {
 
   const projects = [
     {
-      title: "Autonomous Navigation System",
-      description: "Developed a ROS-based navigation system for mobile robots using SLAM and path planning algorithms",
-      tags: ["ROS", "Python", "SLAM", "Computer Vision"],
-      link: "#",
+      title: "Robotics Calculator",
+      description: "Simplified Matlab App for solving pose and transformation calculation",
+      tags: ["MATLAB", "MATLAB GUI", "Iacobians", "Inverse Kinematics"],
+      link: "/projects/robotics-calculator",
       image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Robotic Arm Control Interface",
       description: "Created a real-time control system for a 6-DOF robotic arm with inverse kinematics",
       tags: ["C++", "ROS", "Control Systems", "Qt"],
-      link: "#",
+      link: "/projects/robotic-arm-control",
       image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Machine Vision System",
       description: "Implemented an AI-powered vision system for object detection and pose estimation",
       tags: ["Python", "OpenCV", "Deep Learning", "PyTorch"],
-      link: "#",
+      link: "/projects/machine-vision",
       image: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?auto=format&fit=crop&w=800&q=80"
     }
   ];
@@ -78,8 +82,8 @@ function App() {
         </nav>
       </header>
 
-      {/* Hero Section with Robotic Arm Animation */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      {/* Enhanced Hero Section */}
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className={`flex flex-col items-start text-left transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
@@ -87,48 +91,57 @@ function App() {
                 <img 
                   src={ashishImage}
                   alt="Profile" 
-                  className="w-32 h-32 rounded-full border-4 border-white shadow-lg"
+                  className="w-48 h-48 rounded-2xl border-4 border-white shadow-xl object-cover transform hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute -bottom-2 -right-2 bg-blue-600 text-white p-2 rounded-full animate-pulse">
-                  <Robot size={24} />
+                <div className="absolute -bottom-3 -right-3 bg-blue-600 text-white p-3 rounded-xl shadow-lg animate-pulse">
+                  <Robot size={28} />
                 </div>
               </div>
-              <h1 className="text-5xl font-bold mb-6">Ashish Anil Bhogate</h1>
-              <h2 className="text-2xl text-gray-600 mb-8 flex items-center gap-2">
-                <Cpu size={24} className="text-blue-600" /> Robotics Engineer
+              <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+                I'm Ashish
+              </h1>
+              <h2 className="text-3xl text-gray-700 mb-6 flex items-center gap-3">
+                <Cpu className="text-blue-600" /> Robotics Engineer & AI Enthusiast
               </h2>
-              <p className="text-xl text-gray-600 mb-12">
-                Specializing in autonomous systems, robotic control, and machine vision. 
-                Passionate about creating intelligent robotic solutions that bridge the gap between 
-                theoretical robotics and practical applications.
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                A passionate robotics engineer with expertise in autonomous systems and industrial automation. 
+                I specialize in developing intelligent robotic solutions that bridge the gap between theoretical 
+                concepts and practical applications. With a strong foundation in control systems, machine vision, 
+                and AI, I strive to push the boundaries of what's possible in modern robotics.
               </p>
-              <div className="flex gap-6">
+              <div className="flex gap-6 mb-12">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
-                  className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-all hover:scale-110">
+                  className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition-all hover:scale-110 shadow-md">
                   <Github size={24} className="text-gray-700" />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-all hover:scale-110">
+                  className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition-all hover:scale-110 shadow-md">
                   <Linkedin size={24} className="text-gray-700" />
                 </a>
                 <a href="mailto:your.email@example.com"
-                  className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-all hover:scale-110">
+                  className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition-all hover:scale-110 shadow-md">
                   <Mail size={24} className="text-gray-700" />
                 </a>
               </div>
+              <a 
+                href="#projects"
+                className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all hover:scale-105 shadow-lg group"
+              >
+                View My Work
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
             <div className={`relative transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
-              {/* Robotic Arm SVG Animation */}
-              <div className="relative w-full h-[400px] bg-gradient-to-br from-blue-50 to-gray-50 rounded-xl shadow-lg overflow-hidden">
+              <div className="relative w-full h-[500px] bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl shadow-xl overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80"
                   alt="Robotic Arm"
                   className="w-full h-full object-cover opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent">
-                  <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-lg">
-                    <h3 className="text-lg font-semibold text-blue-600">Industrial Robotics Expert</h3>
-                    <p className="text-gray-600">Specializing in robotic arm kinematics and control systems</p>
+                  <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">Robotics Specialist</h3>
+                    <p className="text-gray-700">Transforming complex robotics challenges into elegant solutions</p>
                   </div>
                 </div>
               </div>
@@ -137,7 +150,7 @@ function App() {
         </div>
       </section>
 
-      {/* Skills Section with Animated Cards */}
+      {/* Skills Section */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
@@ -147,7 +160,7 @@ function App() {
             {skills.map((skillSet, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-lg p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-xl font-bold mb-4 text-blue-600">{skillSet.category}</h3>
                 <ul className="space-y-2">
@@ -164,7 +177,7 @@ function App() {
         </div>
       </section>
 
-      {/* Projects Section with Image Cards */}
+      {/* Projects Section */}
       <section id="projects" className="py-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
@@ -194,13 +207,13 @@ function App() {
                       </span>
                     ))}
                   </div>
-                  <a 
-                    href={project.link} 
+                  <Link 
+                    to={project.link} 
                     className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 group"
                   >
                     View Project 
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -208,7 +221,7 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section with Hover Effects */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-gray-50">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
@@ -218,20 +231,31 @@ function App() {
           </p>
           <a 
             href="mailto:your.email@example.com"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-lg"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-xl transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-lg"
           >
             <Mail size={20} /> Contact Me
           </a>
         </div>
       </section>
 
-      {/* Footer with Gradient Border */}
+      {/* Footer */}
       <footer className="bg-white py-8 px-6 border-t border-gray-100">
         <div className="container mx-auto text-center text-gray-600">
           <p>© {new Date().getFullYear()} Ashish Anil Bhogate. All rights reserved.</p>
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/projects/robotics-calculator" element={<RoboticsCalculator />} />
+      <Route path="/projects/robotic-arm-control" element={<RoboticArmControl />} />
+      <Route path="/projects/machine-vision" element={<MachineVision />} />
+    </Routes>
   );
 }
 
