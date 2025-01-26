@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ashishImage from './ashish.jpg';
 import { Github, Linkedin, Mail, ExternalLink, User, Code, Briefcase, Cpu, Notebook as Robot, BrainCircuit as Circuit, Cog, ChevronRight, ArrowRight } from 'lucide-react';
 
 function App() {
@@ -84,7 +85,7 @@ function App() {
             <div className={`flex flex-col items-start text-left transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
               <div className="relative mb-8">
                 <img 
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&h=200" 
+                  src={ashishImage}
                   alt="Profile" 
                   className="w-32 h-32 rounded-full border-4 border-white shadow-lg"
                 />
