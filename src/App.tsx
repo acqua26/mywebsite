@@ -113,15 +113,15 @@ function HomePage() {
                 and AI, I strive to push the boundaries of what's possible in modern robotics.
               </p>
               <div className="flex gap-6 mb-12">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                <a href="https://github.com/acqua26" target="_blank" rel="noopener noreferrer" 
                   className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition-all hover:scale-110 shadow-md">
                   <Github size={24} className="text-gray-700" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/in/ashishbhogate007/" target="_blank" rel="noopener noreferrer"
                   className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition-all hover:scale-110 shadow-md">
                   <Linkedin size={24} className="text-gray-700" />
                 </a>
-                <a href="mailto:your.email@example.com"
+                <a href="aashish.bhogate26@gmail.com"
                   className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition-all hover:scale-110 shadow-md">
                   <Mail size={24} className="text-gray-700" />
                 </a>
