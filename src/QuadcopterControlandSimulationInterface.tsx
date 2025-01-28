@@ -1,24 +1,23 @@
 import React from 'react';
+import QuadcopterImage from './Quadcopter.png';
 import { ArrowLeft, Notebook as Robot, Code, ChevronRight, Settings, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function RoboticArmControl() {
+export default function QuadcopterControlandSimulationInterface() {
   const features = [
-    "Real-time Joint Control and Monitoring",
-    "Inverse Kinematics Solver",
-    "Path Planning and Trajectory Generation",
-    "3D Visualization of Robot State",
+    "Comprehensive Quadcopter Modeling",
+    "State-Space Representation",
+    "Advanced Z-Axis Control",
+    "PID Controller Integration",
     "Safety Monitoring System",
-    "Custom G-code Interpreter"
+    "Simulation Environment"
   ];
 
   const technicalDetails = [
-    "C++ with Qt Framework for GUI",
-    "ROS Integration for Robot Communication",
-    "Custom Inverse Kinematics Library",
-    "Real-time Control Loop at 1kHz",
-    "OpenGL-based 3D Visualization",
-    "Modular Plugin Architecture"
+    "Modeling Framework: Dynamic equations for quadcopter motion based on free-body diagrams and state-space representation",
+    "Control System: PID controller with eigenvalue placement to achieve desired stability and responsiveness",
+    "Simulation Tools: MATLAB Simulink for modeling, debugging, and iterative testing",
+    "Key Metrics: Controlled overshoot (<10%) and settling time (3-5 seconds) for precision"
   ];
 
   return (
@@ -32,11 +31,10 @@ export default function RoboticArmControl() {
           </Link>
           <h1 className="text-4xl font-bold mb-4 flex items-center gap-3">
             <Robot size={36} />
-            Robotic Arm Control Interface
+            Quadcopter Control and Simulation Interface
           </h1>
           <p className="text-xl text-purple-100 max-w-2xl">
-            A sophisticated control system for industrial robotic arms, featuring real-time control,
-            advanced path planning, and intuitive operator interface.
+          A sophisticated simulation and control system for quadcopter drones, featuring dynamic modeling, state-space representation, and advanced vertical motion control
           </p>
         </div>
       </div>
@@ -81,17 +79,14 @@ export default function RoboticArmControl() {
           <div className="space-y-8">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80"
+                src={QuadcopterImage}
                 alt="Robotic Arm Interface"
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-4">Project Overview</h3>
                 <p className="text-gray-600">
-                  The Robotic Arm Control Interface is a comprehensive solution for controlling
-                  industrial robotic arms. It combines advanced control algorithms with an
-                  intuitive user interface, making complex robotics operations accessible to
-                  operators while maintaining precise control and safety standards.
+                This project provides an in-depth understanding of quadcopter dynamics and control mechanisms, emphasizing Z-axis stability. It combines theoretical modeling with practical simulations to bridge the gap between abstract dynamics and real-world aerial vehicle applications
                 </p>
               </div>
             </div>
@@ -102,11 +97,9 @@ export default function RoboticArmControl() {
                 The system is built on a modular architecture with these key components:
               </p>
               <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                <li>Real-time Control Module</li>
-                <li>Safety Monitoring System</li>
-                <li>Path Planning Engine</li>
-                <li>User Interface Layer</li>
-                <li>Hardware Communication Layer</li>
+                <li>Quadcopter Dynamics Module</li>
+                <li>Controller Design Module</li>
+                <li>Simulation Layer</li>
               </ol>
             </div>
           </div>
