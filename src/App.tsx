@@ -3,7 +3,7 @@ import RoboticsCalculatorImage from './RoboticsCalculator.png';
 import QuadcopterImage from './Quadcopter.png';
 import MachineVisionImage from './MachineVision.png';
 import SecureEyeImage from './SecureEye.png';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, ExternalLink, User, Code, Briefcase, Cpu, Notebook as Robot, BrainCircuit as Circuit, Cog, ChevronRight, ArrowRight } from 'lucide-react';
 import RoboticsCalculator from './RoboticsCalculator';
@@ -44,7 +44,7 @@ function HomePage() {
       title: "Quadcopter Control and Simulation Interface",
       description: "A sophisticated simulation and control system for quadcopter drones, featuring dynamic modeling, state-space representation, and advanced vertical motion control",
       tags: ["MATLAB", "Simulink", "Control Systems", "Parrot Minidrone Toolbox"],
-      link: "/projects/robotic-arm-control", 
+      link: "/projects/quadcopter-control",
       image: QuadcopterImage
     },
     {
@@ -265,7 +265,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/projects/robotics-calculator" element={<RoboticsCalculator />} />
-      <Route path="/projects/robotic-arm-control" element={<QuadcopterControlandSimulationInterface />} />
+      <Route path="/projects/quadcopter-control" element={<QuadcopterControlandSimulationInterface />} />
       <Route path="/projects/machine-vision" element={<MachineVision />} />
       <Route path="/projects/secure-eye" element={<SecureEye />} />
     </Routes>
