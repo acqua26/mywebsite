@@ -9,6 +9,7 @@ import { Github, Linkedin, Mail, ExternalLink, User, Code, Briefcase, Cpu, Noteb
 import RoboticsCalculator from './RoboticsCalculator';
 import QuadcopterControlandSimulationInterface from './QuadcopterControlandSimulationInterface';
 import MachineVision from './MachineVision';
+import SecureEye from './SecureEye';
 
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -266,7 +267,7 @@ function App() {
       <Route path="/projects/robotics-calculator" element={<RoboticsCalculator />} />
       <Route path="/projects/robotic-arm-control" element={<QuadcopterControlandSimulationInterface />} />
       <Route path="/projects/machine-vision" element={<MachineVision />} />
-      <Route path="/projects/secure-eye" element={<div>SecureEye Project Coming Soon</div>} />
+      <Route path="/projects/secure-eye" element={<SecureEye />} />
     </Routes>
   );
 }
