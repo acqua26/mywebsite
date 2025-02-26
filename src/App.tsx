@@ -1,14 +1,14 @@
 import ashishImage from './ashish.jpg';
 import RoboticsCalculatorImage from './RoboticsCalculator.png';
 import QuadcopterImage from './Quadcopter.png';
-import MachineVisionImage from './MachineVision.png';
+import CrabRobotImage from './CrabRobot.png';
 import SecureEyeImage from './SecureEye.png';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, ExternalLink, User, Code, Briefcase, Cpu, Notebook as Robot, BrainCircuit as Circuit, Cog, ChevronRight, ArrowRight } from 'lucide-react';
 import RoboticsCalculator from './RoboticsCalculator';
 import QuadcopterControlandSimulationInterface from './QuadcopterControlandSimulationInterface';
-import MachineVision from './MachineVision';
+import CrabRobot from './CrabRobot';
 import SecureEye from './SecureEye';
 
 function HomePage() {
@@ -48,11 +48,11 @@ function HomePage() {
       image: QuadcopterImage
     },
     {
-      title: "Machine Vision System",
-      description: "Implemented an AI-powered vision system for object detection and pose estimation",
-      tags: ["Python", "OpenCV", "Deep Learning", "PyTorch"],
-      link: "/projects/machine-vision",
-      image: MachineVisionImage
+      title: "Crab Walking Robot using Strandbeest Mechanism",
+      description: "Developed an innovative robotic crab utilizing Theo Jansen's Strandbeest mechanism, combining mechanical engineering principles with artistic design. The robot features precise stepper motor control, Arduino-based navigation, and laser-cut components for optimal performance.",
+      tags: ["Arduino", "CAD", "Mechanical Design", "Robotics", "Motion Control"],
+      link: "/projects/CrabRobot",
+      image: CrabRobotImage
     },
     {
       title: "SecureEye: Security Surveillance",
@@ -266,7 +266,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/projects/robotics-calculator" element={<RoboticsCalculator />} />
       <Route path="/projects/quadcopter-control" element={<QuadcopterControlandSimulationInterface />} />
-      <Route path="/projects/machine-vision" element={<MachineVision />} />
+      <Route path="/projects/crabrobot" element={<CrabRobot />} />
       <Route path="/projects/secure-eye" element={<SecureEye />} />
     </Routes>
   );
