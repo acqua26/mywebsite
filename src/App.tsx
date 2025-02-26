@@ -1,7 +1,7 @@
 import ashishImage from './ashish.jpg';
 import RoboticsCalculatorImage from './RoboticsCalculator.png';
 import QuadcopterImage from './Quadcopter.png';
-import CrabRobotImage from './CrabRobot.png';
+import CrabRobotImage from './CrabRobot.jpg';
 import SecureEyeImage from './SecureEye.png';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
