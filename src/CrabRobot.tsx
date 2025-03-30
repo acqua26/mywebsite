@@ -144,7 +144,7 @@ export default function CrabRobot() {
                       View PDF Documentation
                     </a>
                     <a
-                      href="https://github.com/Acqua26/crabrobot"
+                      href="https://github.com/yourusername/crabrobot"
                       className="block w-full bg-blue-600 text-white text-center py-3 rounded-md hover:bg-blue-700 transition duration-150"
                     >
                       View on GitHub
