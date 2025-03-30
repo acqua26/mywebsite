@@ -1,5 +1,5 @@
 import CrabRobotImage from './CrabRobot.jpg';
-import { ArrowLeft, Code, ChevronRight, Bot, FileText, Play } from 'lucide-react';
+import { ArrowLeft, Code, ChevronRight, Bot, FileText, Play, FilePresentation } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function CrabRobot() {
@@ -144,7 +144,7 @@ export default function CrabRobot() {
                       View PDF Documentation
                     </a>
                     <a
-                      href="https://github.com/yourusername/crabrobot"
+                      href="https://github.com/acqua26/mywebsite/blob/main/src/Team%2008%20MAE506%20Final%20Project%20Report.pdf"
                       className="block w-full bg-blue-600 text-white text-center py-3 rounded-md hover:bg-blue-700 transition duration-150"
                     >
                       View on GitHub
@@ -155,6 +155,52 @@ export default function CrabRobot() {
             </div>
           </div>
         </div>
+
+        {/* Add New Documents Section */}
+        <section className="mt-12 bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Project Documents</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* PDF Document Card */}
+            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <FileText className="text-red-600" size={24} />
+                <h3 className="text-xl font-semibold">Project Report</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Detailed documentation of the project including methodology, implementation, and results.
+              </p>
+              <a
+                href={`${import.meta.env.BASE_URL}Team 08 MAE506 Final Project Report.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-red-600 hover:text-red-700"
+              >
+                <FileText size={20} />
+                View PDF
+              </a>
+            </div>
+
+            {/* PPT Document Card */}
+            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <FilePresentation className="text-blue-600" size={24} />
+                <h3 className="text-xl font-semibold">Project Presentation</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Project overview and key findings presented in slide format.
+              </p>
+              <a
+                href={`${import.meta.env.BASE_URL}Team 08 MAE506 Final Project Presentation.pptx`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
+              >
+                <FilePresentation size={20} />
+                View Presentation
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
