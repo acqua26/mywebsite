@@ -3,4 +3,27 @@
   publish = "dist"
 
 [build.environment]
-  NPM_FLAGS = "--no-audit --no-fund" 
+  NPM_FLAGS = "--no-audit --no-fund"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Add this section to handle binary files
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"
+
+[[headers]]
+  for = "/*.pptx"
+  [headers.values]
+    Content-Type = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Security-Policy = "frame-ancestors 'self' https://drive.google.com"
+    X-Frame-Options = "ALLOW-FROM https://drive.google.com" 

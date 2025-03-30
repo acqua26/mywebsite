@@ -1,8 +1,19 @@
+import { useState } from 'react';
 import CrabRobotImage from './CrabRobot.jpg';
-import { ArrowLeft, Code, ChevronRight, Bot, FileText, Play, FilePresentation } from 'lucide-react';
+import { ArrowLeft, Code, ChevronRight, Bot, Menu, X, ArrowRight, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function CrabRobot() {
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [selectedDoc, setSelectedDoc] = useState<'pdf' | null>(null);
+
+  const handleDocClick = (docType: 'pdf') => {
+    setSelectedDoc(docType);
+    setIsPanelOpen(true);
+  };
+
+  const PDF_VIEWER_URL = "https://drive.google.com/file/d/1boTBK29P0snUa1y_MiZLngZOZ0CqRdsf/preview";
+
   const features = [
     "Strandbeest Mechanism Implementation",
     "Dual Stepper Motor Control System",
@@ -24,7 +35,7 @@ export default function CrabRobot() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
@@ -104,103 +115,83 @@ export default function CrabRobot() {
                   <li>Control System Development</li>
                 </ol>
               </div>
-
-              <div className="lg:sticky lg:top-8">
-                <div className="space-y-8">
-                  <img
-                    src="/crabrobot-detail.jpg"
-                    alt="Crab Robot"
-                    className="w-full rounded-lg shadow-lg"
-                  />
-                  
-                  {/* Add Video Section */}
-                  <div className="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <Play className="text-blue-600" />
-                      Project Demo
-                    </h3>
-                    <video 
-                      controls 
-                      className="w-full rounded-lg"
-                      poster="/crabrobot-thumbnail.jpg"
-                    >
-                      <source src="/crabrobot-demo.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-
-                  {/* Add PDF Section */}
-                  <div className="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                      <FileText className="text-blue-600" />
-                      Documentation
-                    </h3>
-                    <a
-                      href={`${import.meta.env.BASE_URL}Team 08 MAE506 Final Project Report.pdf`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full bg-gray-100 text-gray-700 text-center py-3 rounded-md hover:bg-gray-200 transition duration-150 mb-4"
-                    >
-                      View PDF Documentation
-                    </a>
-                    <a
-                      href="https://github.com/yourusername/crabrobot"
-                      className="block w-full bg-blue-600 text-white text-center py-3 rounded-md hover:bg-blue-700 transition duration-150"
-                    >
-                      View on GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Add New Documents Section */}
-        <section className="mt-12 bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Project Documents</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* PDF Document Card */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <FileText className="text-red-600" size={24} />
-                <h3 className="text-xl font-semibold">Project Report</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Detailed documentation of the project including methodology, implementation, and results.
-              </p>
-              <a
-                href={`${import.meta.env.BASE_URL}Team 08 MAE506 Final Project Report.pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-red-600 hover:text-red-700"
-              >
-                <FileText size={20} />
-                View PDF
-              </a>
-            </div>
+      {/* Floating Menu Button */}
+      <button
+        onClick={() => setIsPanelOpen(true)}
+        className="fixed right-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-l-lg shadow-lg hover:bg-blue-700 transition-all"
+      >
+        <Menu size={24} />
+      </button>
 
-            {/* PPT Document Card */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <FilePresentation className="text-blue-600" size={24} />
-                <h3 className="text-xl font-semibold">Project Presentation</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Project overview and key findings presented in slide format.
-              </p>
-              <a
-                href={`${import.meta.env.BASE_URL}Team 08 MAE506 Final Project Presentation.pptx`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
-              >
-                <FilePresentation size={20} />
-                View Presentation
-              </a>
+      {/* Slide-out Panel */}
+      <div className={`fixed right-0 top-0 h-full w-[90vw] md:w-[70vw] lg:w-[60vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${isPanelOpen ? 'translate-x-0' : 'translate-x-full'} overflow-hidden flex flex-col`}>
+        {/* Panel Header */}
+        <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-blue-600 text-white">
+          <h2 className="text-2xl font-bold">Project Documents</h2>
+          <button
+            onClick={() => {
+              setIsPanelOpen(false);
+              setSelectedDoc(null);
+            }}
+            className="p-2 hover:bg-blue-700 rounded-full transition-colors"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        {/* Panel Content */}
+        <div className="flex h-full">
+          {/* Sidebar */}
+          <div className="w-64 border-r border-gray-200 p-4 bg-gray-50">
+            <div 
+              className={`p-4 rounded-lg mb-4 cursor-pointer transition-all ${selectedDoc === 'pdf' ? 'bg-blue-100 text-blue-700' : 'hover:bg-gray-100'}`}
+              onClick={() => handleDocClick('pdf')}
+            >
+              <h3 className="font-semibold">Project Report</h3>
+              <p className="text-sm text-gray-600">Technical documentation and results</p>
             </div>
           </div>
-        </section>
+
+          {/* Document Viewer */}
+          <div className="flex-1 h-full bg-gray-50">
+            {selectedDoc === 'pdf' && (
+              <iframe
+                src={PDF_VIEWER_URL}
+                className="w-full h-full border-0"
+                title="PDF Viewer"
+                allow="autoplay"
+              />
+            )}
+            {!selectedDoc && (
+              <div className="flex items-center justify-center h-full text-gray-500">
+                <div className="text-center">
+                  <p className="mb-2">Select a document from the sidebar</p>
+                  <p className="text-sm text-gray-400">Documents will open in the viewer</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Add a fallback in case the viewer fails */}
+        <div className="absolute bottom-4 right-4">
+          {selectedDoc && (
+            <a 
+              href="https://drive.google.com/file/d/1boTBK29P0snUa1y_MiZLngZOZ0CqRdsf/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
+            >
+              Open in new tab
+              <ArrowRight size={16} />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
