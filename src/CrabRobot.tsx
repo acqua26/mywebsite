@@ -136,7 +136,7 @@ export default function CrabRobot() {
                       Documentation
                     </h3>
                     <a
-                      href="/Team 08 MAE506 Final Project Report.pdf"
+                      href={`${import.meta.env.BASE_URL}Team 08 MAE506 Final Project Report.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full bg-gray-100 text-gray-700 text-center py-3 rounded-md hover:bg-gray-200 transition duration-150 mb-4"
