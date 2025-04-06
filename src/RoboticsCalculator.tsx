@@ -1,6 +1,16 @@
 import React from 'react';
 import RoboticsCalculatorImage from './RoboticsCalculator.png';
-import { ArrowLeft, Calculator, Notebook as Robot, Code, ChevronRight } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  Calculator, 
+  Bot,
+  Code, 
+  ChevronRight, 
+  Menu, 
+  X, 
+  ArrowRight, 
+  FileText 
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function RoboticsCalculator() {
@@ -48,7 +58,7 @@ export default function RoboticsCalculator() {
           <div>
             <div className="mb-12">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <Robot className="text-blue-600" />
+                <Bot className="text-blue-600" />
                 Key Features
               </h2>
               <ul className="space-y-4">
@@ -96,7 +106,7 @@ export default function RoboticsCalculator() {
             <div className="bg-gray-50 rounded-xl p-6">
               <h3 className="text-xl font-bold mb-4">Development Process</h3>
               <p className="text-gray-600 mb-4">
-              The development followed an iterative approach. The core mathematical engine was developed first, followed by the design and implementation of the GUI. The 3D visualization system was integrated to enhance user experience, and extensive testing was carried out using real robot models. Callback functions were used to execute the necessary functions, and the app was optimized for ease of use. The final product was tested with students, who praised the app for being intuitive and user-friendly, with one user commenting, “the app is easy to use.”
+              The development followed an iterative approach. The core mathematical engine was developed first, followed by the design and implementation of the GUI. The 3D visualization system was integrated to enhance user experience, and extensive testing was carried out using real robot models. Callback functions were used to execute the necessary functions, and the app was optimized for ease of use. The final product was tested with students, who praised the app for being intuitive and user-friendly, with one user commenting, "the app is easy to use."
 
               Team Contribution: I shared the responsibility of programming the entire app and backend code alongside Rahul Thorat, a brilliant coder from ASU. Together, they successfully programmed the app in less than a week, adding additional functions to improve its usability.
 

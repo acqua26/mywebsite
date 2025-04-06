@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SecureEyeImage from './SecureEye.png';
-import { ArrowLeft, Shield, Code, ChevronRight, Notebook as Robot, Settings, Menu, X, ArrowRight, FileText } from 'lucide-react';
+import { ArrowLeft, Shield, Code, ChevronRight, Bot, Settings, Menu, X, ArrowRight, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function SecureEye() {

@@ -1,6 +1,16 @@
 import { useState } from 'react';
 import QuadcopterImage from './Quadcopter.png';
-import { ArrowLeft, Notebook as Robot, Code, ChevronRight, Settings, Menu, X, ArrowRight } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  Code, 
+  ChevronRight, 
+  Bot,
+  Menu, 
+  X, 
+  ArrowRight, 
+  FileText,
+  Presentation
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function QuadcopterControlandSimulationInterface() {
@@ -44,7 +54,7 @@ export default function QuadcopterControlandSimulationInterface() {
             Back to Portfolio
           </Link>
           <h1 className="text-4xl font-bold mb-4 flex items-center gap-3">
-            <Robot size={36} />
+            <Bot size={36} />
             Quadcopter Control and Simulation Interface
           </h1>
           <p className="text-xl text-purple-100 max-w-2xl">
@@ -60,7 +70,7 @@ export default function QuadcopterControlandSimulationInterface() {
           <div>
             <div className="mb-12">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <Settings className="text-purple-600" />
+                <Presentation className="text-purple-600" />
                 Key Features
               </h2>
               <ul className="space-y-4">
