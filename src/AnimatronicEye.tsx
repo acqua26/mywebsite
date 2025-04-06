@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import AnimatronicEyeImage from './AnimatronicEye.png';
-import { ArrowLeft, Code, ChevronRight, Bot, Menu, X, ArrowRight, FileText } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  Code, 
+  ChevronRight, 
+  Bot,
+  Menu, 
+  X, 
+  ArrowRight, 
+  FileText 
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const VIDEO_URL = "https://drive.google.com/file/d/1aaZpdPm4FmB-14pamemxsggoQSwXooo-/preview";

@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import CrabRobotImage from './CrabRobot.jpg';
-import { ArrowLeft, Code, ChevronRight, Bot, Menu, X, ArrowRight, FileText } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  Code, 
+  ChevronRight, 
+  Bot,
+  Menu, 
+  X, 
+  ArrowRight, 
+  FileText 
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ListItem {

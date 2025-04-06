@@ -7,7 +7,19 @@ import MultiRobotImage from './MultiRobot.png';
 import AnimatronicEyeImage from './AnimatronicEye.png';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { GithubIcon, Linkedin, Mail, User, Code, Cpu, Notebook as Robot, BrainCircuit as Circuit, Cog, ChevronRight, ArrowRight } from 'lucide-react';
+import { 
+  Github,
+  Linkedin,
+  Mail,
+  User,
+  Code,
+  Cpu,
+  Bot as Robot,
+  Brain as Circuit,
+  Cog,
+  ChevronRight,
+  ArrowRight
+} from 'lucide-react';
 import RoboticsCalculator from './RoboticsCalculator';
 import QuadcopterControlandSimulationInterface from './QuadcopterControlandSimulationInterface';
 import CrabRobot from './CrabRobot';
@@ -151,7 +163,7 @@ function HomePage() {
               <div className="flex gap-6 mb-12">
                 <a href="https://github.com/acqua26" target="_blank" rel="noopener noreferrer" 
                   className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition-all hover:scale-110 shadow-md">
-                  <GithubIcon size={24} className="text-gray-700" />
+                  <Github size={24} className="text-gray-700" />
                 </a>
                 <a href="https://www.linkedin.com/in/ashishbhogate007/" target="_blank" rel="noopener noreferrer"
                   className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition-all hover:scale-110 shadow-md">
