@@ -10,6 +10,8 @@ import RoboticsCalculator from './RoboticsCalculator';
 import QuadcopterControlandSimulationInterface from './QuadcopterControlandSimulationInterface';
 import CrabRobot from './CrabRobot';
 import SecureEye from './SecureEye';
+import MultiRobot from './MultiRobot';
+import MultiRobotImage from './MultiRobot.jpg';
 
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -60,6 +62,13 @@ function HomePage() {
       tags: ["IoT", "Raspberry Pi", "OpenCV", "AWS EC2", "Node.js"],
       link: "/projects/secure-eye",
       image: SecureEyeImage
+    },
+    {
+      title: "Multi-UAV Formation Control",
+      description: "Implemented and simulated formation control and mobile agent tracking using multi-UAV systems in MATLAB Simulink and Unreal Engine.",
+      tags: ["MATLAB", "Simulink", "UAV Toolbox", "Unreal Engine", "Control Systems"],
+      link: "/projects/multirobot",
+      image: MultiRobotImage
     }
   ];
 
@@ -268,6 +277,7 @@ function App() {
       <Route path="/projects/quadcopter-control" element={<QuadcopterControlandSimulationInterface />} />
       <Route path="/projects/crabrobot" element={<CrabRobot />} />
       <Route path="/projects/secure-eye" element={<SecureEye />} />
+      <Route path="/projects/multirobot" element={<MultiRobot />} />
     </Routes>
   );
 }
