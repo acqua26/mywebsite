@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import CrabRobotImage from './CrabRobot.jpg';
+import AnimatronicEyeImage from './AnimatronicEye.png';
 import { ArrowLeft, Code, ChevronRight, Bot, Menu, X, ArrowRight, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function CrabRobot() {
+const VIDEO_URL = "https://drive.google.com/file/d/1aaZpdPm4FmB-14pamemxsggoQSwXooo-/preview";
+
+export default function AnimatronicEye() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [selectedDoc, setSelectedDoc] = useState<'pdf' | null>(null);
 
@@ -12,27 +14,22 @@ export default function CrabRobot() {
     setIsPanelOpen(true);
   };
 
-  const PDF_VIEWER_URL = "https://drive.google.com/file/d/1boTBK29P0snUa1y_MiZLngZOZ0CqRdsf/preview";
-  const VIDEO_URL = "https://drive.google.com/file/d/10wdJabzQQfUxmH5IqwUrYup2_gep76x7/preview";
-
   const features = [
-    "Strandbeest Mechanism Implementation",
-    "Dual Stepper Motor Control System",
-    "Custom Gait Pattern Generation",
-    "Differential Steering Control",
-    "PID Speed Regulation",
-    "Analog Joystick Interface",
-    "Real-time Motion Control"
+    "Dual-axis eyeball movement for horizontal and vertical tracking",
+    "Realistic eyelid motion synchronized with eyeball position",
+    "Real-time gaze tracking using camera input or joystick control",
+    "Compact mechanical design with 3D-printed components",
+    "Microcontroller-based control logic (Arduino or similar)",
+    "Modular setup for integration into humanoid robots or exhibits"
   ];
 
   const technicalDetails = [
-    "Arduino-based Control System",
-    "NEMA17 Stepper Motors with A4988 Drivers",
-    "Laser-cut 6mm Acrylic Construction",
-    "Custom 5:1 Gear Reduction System",
-    "AccelStepper Library Integration",
-    "Inverse Kinematics Implementation",
-    "CAD Design using Fusion 360"
+    "Actuation: Servo motors",
+    "Control System: Arduino Uno/Nano with PWM-based servo control",
+    "Gaze input via IR camera, joystick, or programmed behavior",
+    "CAD modeling and 3D printing for mechanical components",
+    "Power supply with regulated 5V for stable servo performance",
+    "Custom firmware for smooth and coordinated motion"
   ];
 
   return (
@@ -46,10 +43,10 @@ export default function CrabRobot() {
               Back to Portfolio
             </Link>
             <h1 className="text-4xl font-bold mb-4 flex items-center gap-3">
-              Crab Walking Robot
+              Animatronic Eye System
             </h1>
             <p className="text-xl text-blue-100 max-w-2xl">
-              The Crab Walking Robot utilizes a Strandbeest mechanism to achieve efficient locomotion. Designed for smooth traversal, it integrates custom gait control and differential steering.
+              Designed and implemented an animatronic eye mechanism with servo-based actuation and real-time gaze tracking for interactive robotics applications.
             </p>
           </div>
         </div>
@@ -94,14 +91,14 @@ export default function CrabRobot() {
             <div className="space-y-8">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <img 
-                  src={CrabRobotImage}
-                  alt="Crab Robot Interface"
+                  src={AnimatronicEyeImage}
+                  alt="Animatronic Eye System"
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-4">Project Overview</h3>
                   <p className="text-gray-600">
-                    This robot employs a Strandbeest mechanism for walking, allowing precise movement with minimal energy consumption. The integration of stepper motors and PID control ensures smooth operation.
+                    Developed a functional animatronic eye system capable of mimicking human eye movement using servo motors and microcontroller integration. Enabled synchronized eyelid and eyeball motion for lifelike expression and responsiveness. Focused on real-time tracking and interactive control for entertainment and HRI (Human-Robot Interaction) use cases.
                   </p>
                 </div>
               </div>
@@ -109,11 +106,13 @@ export default function CrabRobot() {
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-xl font-bold mb-4">Development Process</h3>
                 <p className="text-gray-600 mb-4">
-                  The robot was developed through iterative prototyping. CAD models were created in Fusion 360, followed by laser cutting of acrylic parts. The control system was designed using Arduino, and various gait patterns were tested before finalizing the optimal configuration.
+                  The project involved iterative design and testing of mechanical components, servo control algorithms, and integration of various input methods. 3D printing enabled rapid prototyping of different eye mechanisms until achieving the desired motion quality and reliability.
                 </p>
                 <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>Mechanism Design & Prototyping</li>
-                  <li>Control System Development</li>
+                  <li>Mechanical Design & 3D Printing</li>
+                  <li>Servo Control System Development</li>
+                  <li>Motion Algorithm Implementation</li>
+                  <li>Input System Integration</li>
                 </ol>
               </div>
 
@@ -129,7 +128,7 @@ export default function CrabRobot() {
                 </div>
                 <div className="p-6 pt-4">
                   <p className="text-gray-600">
-                    Demonstration of the Crab Walking Robot's movement and control capabilities using the Strandbeest mechanism.
+                    Demonstration of the animatronic eye system showing real-time gaze tracking and synchronized eyelid movement.
                   </p>
                 </div>
               </div>
@@ -179,7 +178,7 @@ export default function CrabRobot() {
           <div className="flex-1 h-full bg-gray-50">
             {selectedDoc === 'pdf' && (
               <iframe
-                src={PDF_VIEWER_URL}
+                src="YOUR_PDF_VIEWER_URL_HERE"
                 className="w-full h-full border-0"
                 title="PDF Viewer"
                 allow="autoplay"
@@ -195,22 +194,7 @@ export default function CrabRobot() {
             )}
           </div>
         </div>
-
-        {/* Add a fallback in case the viewer fails */}
-        <div className="absolute bottom-4 right-4">
-          {selectedDoc && (
-            <a 
-              href="https://drive.google.com/file/d/1boTBK29P0snUa1y_MiZLngZOZ0CqRdsf/view"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
-            >
-              Open in new tab
-              <ArrowRight size={16} />
-            </a>
-          )}
-        </div>
       </div>
     </div>
   );
-}
+} 

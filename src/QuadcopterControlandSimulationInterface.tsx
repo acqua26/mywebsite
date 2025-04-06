@@ -32,6 +32,7 @@ export default function QuadcopterControlandSimulationInterface() {
 
   const PDF_VIEWER_URL = "https://drive.google.com/file/d/14nwWO_AAoQxHZqnaR0juQBuZiQQDnBHI/preview";
   const PPT_VIEWER_URL = "https://drive.google.com/file/d/12_Mx06iKZgQWNu_NNmbz_XpHKNm9x-fd/preview";
+  const VIDEO_URL = "https://drive.google.com/file/d/1yVdNjbjv8GAtl4_qiV_Z_2DSwUqfcf3Z/preview";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8 relative">
@@ -114,6 +115,23 @@ export default function QuadcopterControlandSimulationInterface() {
                 <li>Controller Design Module</li>
                 <li>Simulation Layer</li>
               </ol>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <h3 className="text-xl font-bold p-6 pb-4">Project Demo</h3>
+              <div className="aspect-video w-full">
+                <iframe
+                  src={VIDEO_URL}
+                  allow="autoplay"
+                  className="w-full h-full border-0"
+                  title="Project Demo Video"
+                />
+              </div>
+              <div className="p-6 pt-4">
+                <p className="text-gray-600">
+                  Demonstration of quadcopter control and simulation capabilities implemented in the project.
+                </p>
+              </div>
             </div>
           </div>
         </div>

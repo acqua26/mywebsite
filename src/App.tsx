@@ -3,6 +3,8 @@ import RoboticsCalculatorImage from './RoboticsCalculator.png';
 import QuadcopterImage from './Quadcopter.png';
 import CrabRobotImage from './CrabRobot.jpg';
 import SecureEyeImage from './SecureEye.png';
+import MultiRobotImage from './MultiRobot.png';
+import AnimatronicEyeImage from './AnimatronicEye.png';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { GithubIcon, Linkedin, Mail, User, Code, Cpu, Notebook as Robot, BrainCircuit as Circuit, Cog, ChevronRight, ArrowRight } from 'lucide-react';
@@ -11,7 +13,8 @@ import QuadcopterControlandSimulationInterface from './QuadcopterControlandSimul
 import CrabRobot from './CrabRobot';
 import SecureEye from './SecureEye';
 import MultiRobot from './MultiRobot';
-import MultiRobotImage from './MultiRobot.jpg';
+import AnimatronicEye from './AnimatronicEye';
+
 
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -69,6 +72,13 @@ function HomePage() {
       tags: ["MATLAB", "Simulink", "UAV Toolbox", "Unreal Engine", "Control Systems"],
       link: "/projects/multirobot",
       image: MultiRobotImage
+    },
+    {
+      title: "Animatronic Eye System",
+      description: "Designed and implemented an animatronic eye mechanism with servo-based actuation and real-time gaze tracking for interactive robotics applications.",
+      tags: ["Arduino", "Servo Control", "3D Printing", "Robotics", "HRI"],
+      link: "/projects/animatronic-eye",
+      image: AnimatronicEyeImage
     }
   ];
 
@@ -278,6 +288,7 @@ function App() {
       <Route path="/projects/crabrobot" element={<CrabRobot />} />
       <Route path="/projects/secure-eye" element={<SecureEye />} />
       <Route path="/projects/multirobot" element={<MultiRobot />} />
+      <Route path="/projects/animatronic-eye" element={<AnimatronicEye />} />
     </Routes>
   );
 }

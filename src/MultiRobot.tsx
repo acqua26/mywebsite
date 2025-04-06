@@ -30,6 +30,9 @@ export default function MultiRobot() {
     "Achieved robust path-following via PID and state feedback controllers"
   ];
 
+  const PDF_VIEWER_URL = "https://drive.google.com/file/d/1kZGPxMSymguBOTTPSMhCjcEk1DnbXj9T/preview";
+  const VIDEO_URL = "https://drive.google.com/file/d/1IA58Wv6JrjSLhuu8ABm0BhopmWHXPezH/preview";
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
@@ -112,6 +115,23 @@ export default function MultiRobot() {
                   <li>Real-time Simulation Integration</li>
                 </ol>
               </div>
+
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <h3 className="text-xl font-bold p-6 pb-4">Project Demo</h3>
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={VIDEO_URL}
+                    allow="autoplay"
+                    className="w-full h-full border-0"
+                    title="Project Demo Video"
+                  />
+                </div>
+                <div className="p-6 pt-4">
+                  <p className="text-gray-600">
+                    Demonstration of multi-UAV formation control and tracking capabilities implemented in the project.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -158,7 +178,7 @@ export default function MultiRobot() {
           <div className="flex-1 h-full bg-gray-50">
             {selectedDoc === 'pdf' && (
               <iframe
-                src="YOUR_PDF_VIEWER_URL_HERE"
+                src={PDF_VIEWER_URL}
                 className="w-full h-full border-0"
                 title="PDF Viewer"
                 allow="autoplay"
@@ -179,7 +199,7 @@ export default function MultiRobot() {
         <div className="absolute bottom-4 right-4">
           {selectedDoc && (
             <a 
-              href="YOUR_PDF_LINK_HERE"
+              href="https://drive.google.com/file/d/1kZGPxMSymguBOTTPSMhCjcEk1DnbXj9T/view"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
