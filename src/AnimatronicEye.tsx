@@ -9,7 +9,7 @@ export default function AnimatronicEye() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [selectedDoc, setSelectedDoc] = useState<'pdf' | null>(null);
 
-  const handleDocClick = (docType: 'pdf') => {
+  const handleDocClick = (docType: 'pdf'): void => {
     setSelectedDoc(docType);
     setIsPanelOpen(true);
   };

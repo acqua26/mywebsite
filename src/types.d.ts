@@ -21,4 +21,13 @@ declare module '*.pptx' {
 declare module '*.svg' {
   const src: string;
   export default src;
+}
+
+interface ImportMetaEnv {
+  readonly VITE_APP_TITLE: string;
+  readonly BASE_URL: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
 } 

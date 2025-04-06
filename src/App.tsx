@@ -15,6 +15,14 @@ import SecureEye from './SecureEye';
 import MultiRobot from './MultiRobot';
 import AnimatronicEye from './AnimatronicEye';
 
+// Add proper interface for project items
+interface ProjectItem {
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+  image: string;
+}
 
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -37,7 +45,7 @@ function HomePage() {
     };
   }, []);
 
-  const projects = [
+  const projects: ProjectItem[] = [
     {
       title: "Robotics Calculator",
       description: "Simplified Matlab App for solving pose and transformation calculation",

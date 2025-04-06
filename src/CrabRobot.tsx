@@ -3,6 +3,11 @@ import CrabRobotImage from './CrabRobot.jpg';
 import { ArrowLeft, Code, ChevronRight, Bot, Menu, X, ArrowRight, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+interface ListItem {
+  id: number;
+  text: string;
+}
+
 export default function CrabRobot() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [selectedDoc, setSelectedDoc] = useState<'pdf' | null>(null);
@@ -15,25 +20,25 @@ export default function CrabRobot() {
   const PDF_VIEWER_URL = "https://drive.google.com/file/d/1boTBK29P0snUa1y_MiZLngZOZ0CqRdsf/preview";
   const VIDEO_URL = "https://drive.google.com/file/d/10wdJabzQQfUxmH5IqwUrYup2_gep76x7/preview";
 
-  const features = [
-    "Strandbeest Mechanism Implementation",
-    "Dual Stepper Motor Control System",
-    "Custom Gait Pattern Generation",
-    "Differential Steering Control",
-    "PID Speed Regulation",
-    "Analog Joystick Interface",
-    "Real-time Motion Control"
-  ];
+  const features: ListItem[] = [
+    { id: 1, text: "Strandbeest Mechanism Implementation" },
+    { id: 2, text: "Dual Stepper Motor Control System" },
+    { id: 3, text: "Custom Gait Pattern Generation" },
+    { id: 4, text: "Differential Steering Control" },
+    { id: 5, text: "PID Speed Regulation" },
+    { id: 6, text: "Analog Joystick Interface" },
+    { id: 7, text: "Real-time Motion Control" }
+  ].map((item, index) => ({ ...item, id: index + 1 }));
 
-  const technicalDetails = [
-    "Arduino-based Control System",
-    "NEMA17 Stepper Motors with A4988 Drivers",
-    "Laser-cut 6mm Acrylic Construction",
-    "Custom 5:1 Gear Reduction System",
-    "AccelStepper Library Integration",
-    "Inverse Kinematics Implementation",
-    "CAD Design using Fusion 360"
-  ];
+  const technicalDetails: ListItem[] = [
+    { id: 1, text: "Arduino-based Control System" },
+    { id: 2, text: "NEMA17 Stepper Motors with A4988 Drivers" },
+    { id: 3, text: "Laser-cut 6mm Acrylic Construction" },
+    { id: 4, text: "Custom 5:1 Gear Reduction System" },
+    { id: 5, text: "AccelStepper Library Integration" },
+    { id: 6, text: "Inverse Kinematics Implementation" },
+    { id: 7, text: "CAD Design using Fusion 360" }
+  ].map((item, index) => ({ ...item, id: index + 1 }));
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8 relative">
@@ -65,10 +70,10 @@ export default function CrabRobot() {
                   Key Features
                 </h2>
                 <ul className="space-y-4">
-                  {features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3">
+                  {features.map((feature) => (
+                    <li key={feature.id} className="flex items-center gap-3">
                       <ChevronRight className="text-blue-600 flex-shrink-0" />
-                      <span>{feature}</span>
+                      <span>{feature.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -80,10 +85,10 @@ export default function CrabRobot() {
                   Technical Implementation
                 </h2>
                 <ul className="space-y-4">
-                  {technicalDetails.map((detail, index) => (
-                    <li key={index} className="flex items-center gap-3">
+                  {technicalDetails.map((detail) => (
+                    <li key={detail.id} className="flex items-center gap-3">
                       <ChevronRight className="text-blue-600 flex-shrink-0" />
-                      <span>{detail}</span>
+                      <span>{detail.text}</span>
                     </li>
                   ))}
                 </ul>
