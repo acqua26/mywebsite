@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import QuadcopterImage from './Quadcopter.png';
+import QuadcopterImage from './assets/Quadcopter.png';
 import { 
   ArrowLeft, 
   Code, 

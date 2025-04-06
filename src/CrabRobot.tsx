@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CrabRobotImage from './CrabRobot.jpg';
+import CrabRobotImage from './assets/CrabRobot.jpg';
 import { 
   ArrowLeft, 
   Code, 

@@ -30,7 +30,7 @@ export default defineConfig({
         manualChunks: undefined,
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
-        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
+        assetFileNames: 'assets/[name]-[hash][extname]'
       }
     },
     commonjsOptions: {
@@ -40,7 +40,8 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    strictPort: true,
-    host: true
+    strictPort: false,
+    host: true,
+    open: true
   }
 });

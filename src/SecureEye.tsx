@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SecureEyeImage from './SecureEye.png';
+import SecureEyeImage from './assets/SecureEye.png';
 import { ArrowLeft, Shield, Code, ChevronRight, Bot, Settings, Menu, X, ArrowRight, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

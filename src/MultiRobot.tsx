@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MultiRobotImage from './MultiRobot.png';
+import MultiRobotImage from './assets/MultiRobot.png';
 import { ArrowLeft, Code, ChevronRight, Bot, Menu, X, ArrowRight, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

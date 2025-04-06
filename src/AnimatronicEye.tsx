@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AnimatronicEyeImage from './AnimatronicEye.png';
+import AnimatronicEyeImage from './assets/AnimatronicEye.png';
 import { 
   ArrowLeft, 
   Code, 

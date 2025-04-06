@@ -1,10 +1,10 @@
-import ashishImage from './ashish.jpg';
-import RoboticsCalculatorImage from './RoboticsCalculator.png';
-import QuadcopterImage from './Quadcopter.png';
-import CrabRobotImage from './CrabRobot.jpg';
-import SecureEyeImage from './SecureEye.png';
-import MultiRobotImage from './MultiRobot.png';
-import AnimatronicEyeImage from './AnimatronicEye.png';
+import ashishImage from './assets/ashish.jpg';
+import RoboticsCalculatorImage from './assets/RoboticsCalculator.png';
+import QuadcopterImage from './assets/Quadcopter.png';
+import CrabRobotImage from './assets/CrabRobot.jpg';
+import SecureEyeImage from './assets/SecureEye.png';
+import MultiRobotImage from './assets/MultiRobot.png';
+import AnimatronicEyeImage from './assets/AnimatronicEye.png';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { 
