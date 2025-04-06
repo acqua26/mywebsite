@@ -1,16 +1,24 @@
 declare module '*.jpg' {
-  const value: string;
-  export default value;
+  const src: string;
+  export default src;
 }
 
 declare module '*.png' {
-  const value: string;
-  export default value;
+  const src: string;
+  export default src;
 }
 
 declare module '*.pdf' {
-  const value: string;
-  export default value;
+  const src: string;
+  export default src;
 }
 
-declare module '*.pptx'; 
+declare module '*.pptx' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.svg' {
+  const src: string;
+  export default src;
+} 

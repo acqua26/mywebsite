@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    include: ['react', 'react-dom', 'react-router-dom', 'lucide-react'],
   },
   base: '/', // Ensure base URL is correctly set
   build: {
@@ -15,6 +15,9 @@ export default defineConfig({
       output: {
         manualChunks: undefined,
       },
+    },
+    commonjsOptions: {
+      include: [/node_modules/],
     },
   },
 });
