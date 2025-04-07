@@ -103,6 +103,7 @@ function HomePage() {
   ];
 
   const skills = [
+    { category: "Design", items: ["Solidworks", "ANSYS", "AutoCAD", "GD&T"] },
     { category: "Robotics", items: ["ROS/ROS2", "Inverse Kinematics", "Motion Planning", "Control Systems"] },
     { category: "Programming", items: ["C++", "Python", "MATLAB", "Robot Programming"] },
     { category: "Hardware", items: ["Sensors Integration", "Actuators", "Microcontrollers", "PCB Design"] }
