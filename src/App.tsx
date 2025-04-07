@@ -116,7 +116,7 @@ function HomePage() {
           <div className="flex justify-between items-center">
             <div className="text-xl font-bold flex items-center gap-2">
               <Robot className={`text-blue-600 transition-transform duration-500 ${isVisible ? 'rotate-0' : '-rotate-180'}`} /> 
-              𝓪𝓼𝓱𝓲𝓼𝓱
+              All about Robotics
             </div>
             <div className="flex gap-6">
               <a href="#about" className="hover:text-blue-600 transition-colors flex items-center gap-2">
@@ -191,7 +191,7 @@ function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent">
                   <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg">
-                    <h3 className="text-xl font-bold text-blue-600 mb-2">Robotics Specialist</h3>
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">Robotics Engineer II</h3>
                     <p className="text-gray-700">Transforming complex robotics challenges into elegant solutions</p>
                   </div>
                 </div>
